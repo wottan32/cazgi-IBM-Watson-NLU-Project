@@ -2,27 +2,27 @@ import React from 'react';
 import './bootstrap.min.css';
 
 class EmotionTable extends React.Component {
-    render() {
-      //Returns the emotions as an HTML table
-      return (  
-        <div>
-          <table className="table table-bordered">
-            <tbody>
+  render() {
+    return (
+      <div>
+        <br />
+        <br />
+        <table className="table table-bordered">
+          <tbody>
             {
-                Object.entries(this.props.emotions).map(function(mapentry) {
+              Object.entries(this.props.emotions.result.emotion.document.emotion).map((mapEntry) => {
                 return (
-                    <tr>
-                    <td>{mapentry[0]}</td>
-                    <td>{mapentry[1]}</td>
-                    </tr>
-                    )
-                })
+                  <tr>
+                    <td>{mapEntry[0]}</td>
+                    <td>{mapEntry[1]}</td>
+                  </tr>
+                )
+              })
             }
-            </tbody>
-          </table>
-          </div>
-          );
-        }
-    
+          </tbody>
+        </table>
+      </div>
+    );
+  }
 }
 export default EmotionTable;
